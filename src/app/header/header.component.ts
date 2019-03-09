@@ -11,5 +11,8 @@ keyword = 'test';
 
   ngOnInit() {
   }
+  search($event) {
+    console.log($event);
+  }
 
 }
