@@ -3,7 +3,8 @@
 <div class="home-page">
   <div class="banner">
     <div class="container">
-      <h1 class="logo-font">{{title}}</h1>
+      <!--<h1 class="logo-font">{{title}}</h1>-->
+      <h1 class="logo-font" [title]="title">{{ title }}</h1>
       <p [innerHTML]="subtitle"></p>
     </div>
   </div>
