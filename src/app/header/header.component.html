@@ -4,6 +4,11 @@
         <input class="form-control form-control-sm search-input" type="text" placeholder="Keyword" [(ngModel)]="keyword">
         <button class="btn btn-sm btn-primary" (click)="search($event)">
           <i class="ion-search"></i>
-        </button>{{keyword}}
+        </button>
+        <span *ngIf="keyword ===''"  class="highlight">請輸入條件</span>
+        {{keyword}}
       </div>
     </nav>
+
+
+
