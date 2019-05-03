@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -58,8 +60,12 @@ export class ArticlesService {
     }
   ]
   list = this.originalList;
-  constructor() { }
-
+  constructor(private httpClient: HttpClient) {}
+  loadArticles() {
+    this.httpClient.get('https://conduit.productionready.io/api/articles').subscribe((response: any) => {
+      this.list = response.articles;
+    });
+  }
   searchArticles($event) {
     if ($event) {
       this.list = this.originalList.filter(article => article.title.indexOf($event) !== -1);

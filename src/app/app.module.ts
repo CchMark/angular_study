@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { TagsComponent } from './tags/tags.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { TagsComponent } from './tags/tags.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

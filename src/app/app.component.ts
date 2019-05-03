@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from './articles/articles.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ArticlesService } from './articles/articles.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Mark';
   subtitle = 'A place to share your knowledge <u>in angular study!</u>';
   //list: any[];
@@ -15,5 +15,8 @@ export class AppComponent {
   // }
   constructor(public articlesService: ArticlesService) {
     // this.list = this.articlesService.list;
+  }
+  ngOnInit() {
+    this.articlesService.loadArticles();
   }
 }
